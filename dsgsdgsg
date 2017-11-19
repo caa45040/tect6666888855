@@ -2,6 +2,9 @@
 float x[],y[],vx[],vy[];
 int num=5;
 void setup() {
+noStroke();
+fill(0,255,0);
+
  size(400,300);
   x=new float[num];  y=new float[num];
   vx=new float[num]; vy=new float[num];
@@ -15,7 +18,19 @@ void setup() {
 void draw(){
   background(0);
   for(int ii=0;ii<num;ii++){
-     ellipse(x[ii],y[ii],50,50);
+     if(ii!=4){ 
+     ellipse(x[ii],y[ii],50,50);
+     } else {
+     ellipse(x[ii],y[ii],40,40);
+     }
+     
+     if(ii==0){
+     fill(255,255,255);
+     ellipse(x[0]-10,y[0],5,5);
+     ellipse(x[0]+10,y[0],5,5);
+     fill(0,255,0);
+     }
+     
   }
   //suraido copy
   int i=3,j=4;
