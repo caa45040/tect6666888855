@@ -1,0 +1,33 @@
+//danngomusi program
+float x[],y[],vx[],vy[];
+int num=5;
+void setup() {
+ size(400,300);
+  x=new float[num];  y=new float[num];
+  vx=new float[num]; vy=new float[num];
+  for(int i=0;i<num;i++){
+    x[i]=width/2;    y[i]=height/2;
+  } //for
+  float a=random(TWO_PI);
+  vx[0]=2*cos(a)+30;
+  vy[0]=2*sin(a)+30;
+}
+void draw(){
+  background(0);
+  for(int ii=0;ii<num;ii++){
+     ellipse(x[ii],y[ii],50,50);
+  }
+  //suraido copy
+  int i=3,j=4;
+    for(int iii=0;iii<(num-1);iii++){
+      x[j]=x[i];    y[j]=y[i];
+      i=i-1;j=j-1;
+  }  
+  x[0]+=vx[0]; y[0]+=vy[0];  
+    if(x[0]<0||x[0]>width){vx[0]=-vx[0];};
+    if(y[0]<0||y[0]>height){vy[0]=-vy[0];};
+    delay(500); // [X]ms
+  } //darw
+  
+  
+  
